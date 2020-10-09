@@ -22,9 +22,9 @@
 import re
 
 txt = "This is demo text on which over the time we will be performing different regular expression examples and try to grab or grep the matching pattern. Keep in mind that this is single line without any new line character."
-result = re.search("regular expression",txt)
+result = re.findall("l?d",txt)
 
 if result:
-    print("It's a match !")
+    print("\n It's match !\n Total matche(s): {} \n\n {}\n".format(len(result),result))
 else:
-    print("No match")
+    print("\nNo match\n")
