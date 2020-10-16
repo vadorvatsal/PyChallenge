@@ -1,5 +1,5 @@
 vn/
 .idea
 .vscode/
-.csv
-.json
+*.csv
+*.json
