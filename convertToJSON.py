@@ -12,5 +12,4 @@ convert_from_file(EXCEL_FILE)
 # excel_data_df = pandas.read_excel('/path/to/excel/file.xlsx', sheet_name='Sheet1')
 # json_str = excel_data_df.to_json(orient='records')
 # json_str = json.dumps(json_str, ensure_ascii=False, indent=4)
-# print("\n\n", json_str)
 
