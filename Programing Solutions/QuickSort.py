@@ -1,36 +1,46 @@
-def partition(arr, low, high):
-    i = (low - 1)  # index of smaller element
-    pivot = arr[high]  # pivot
+def partition(array, start, end):
+    pivot = array[start]
+    low = start + 1
+    high = end
 
-    for j in range(low, high):
+    while True:
+        # If the current value we're looking at is larger than the pivot
+        # it's in the right place (right side of pivot) and we can move left,
+        # to the next element.
+        # We also need to make sure we haven't surpassed the low pointer, since that
+        # indicates we have already moved all the elements to their correct side of the pivot
+        while low <= high and array[high] >= pivot:
+            high = high - 1
 
-        # If current element is smaller than or
-        # equal to pivot
-        if arr[j] <= pivot:
-            # increment index of smaller element
-            i = i + 1
-            arr[i], arr[j] = arr[j], arr[i]
+        # Opposite process of the one above
+        while low <= high and array[low] <= pivot:
+            low = low + 1
 
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+        # We either found a value for both high and low that is out of order
+        # or low is higher than high, in which case we exit the loop
+        if low <= high:
+            array[low], array[high] = array[high], array[low]
+            # The loop continues
+        else:
+            # We exit out of the loop
+            break
 
+    array[start], array[high] = array[high], array[start]
 
-def quickSort(arr, low, high):
-    if len(arr) == 1:
-        return arr
-    if low < high:
-        # pi is partitioning index, arr[p] is now
-        # at right place
-        pi = partition(arr, low, high)
-
-        # Separately sort elements before
-        # partition and after partition
-        quickSort(arr, low, pi - 1)
-        quickSort(arr, pi + 1, high)
+    return high
 
 
-# Driver code to test above
-arr = [-9, 2, 34, 467, 2, 0, 1, 9]
-n = len(arr)
-quickSort(arr, 0, n - 1)
-print("Sorted array is: {}".format(arr))
+def quick_sort(array, start, end):
+    if start >= end:
+        return
+
+    p = partition(array, start, end)
+    quick_sort(array, start, p-1)
+    quick_sort(array, p+1, end)
+
+
+array = [29,99,27,41,66,28,44,78,87,19,31,76,58,88,83,97,12,21,44]
+
+print("\nBefore Sort: ", array)
+quick_sort(array, 0, len(array) - 1)
+print("\n After Sort: ", array)
