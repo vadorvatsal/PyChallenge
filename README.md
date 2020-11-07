@@ -11,3 +11,9 @@ This repository contains following,
 - Algorithm problem solution using python
 - Automation using python
 - Testing Automation using python
+
+Libraries used for this repository,
+
+- subprocess
+- selenium
+- excel2json
