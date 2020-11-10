@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
-browser = webdriver.Firefox()
+browser = webdriver.Chrome()
 browser.get('http://python.org')
 
 search = browser.find_element_by_name('q')
