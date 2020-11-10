@@ -1,4 +1,4 @@
-def check_label(passed):
+def check_reliablility(passed):
     if -6 <= passed <= 6:
         print("Neutral")
     elif -18 <= passed <= -7:
@@ -17,4 +17,18 @@ def check_label(passed):
         print("NAN")
 
 
-check_label(-3)
+def check_bias(passed):
+    if 0 <= passed <= 15:
+        print("Unreliable")
+    elif 16 <= passed <= 23:
+        print("Somewhat unreliable")
+    elif 24 <= passed <= 39:
+        print("Mixed reliability")
+    elif 40 <= passed:
+        print("Most reliable")
+    else:
+        print("NAN")
+
+
+check_reliablility(-3)
+check_bias(22)
