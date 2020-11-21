@@ -1,8 +1,10 @@
+# install using pip excel2json-3
+
 
 # Method 1
-from excel2json import convert_from_file
-EXCEL_FILE = '/path/to/excel/file.xlsx'
-convert_from_file(EXCEL_FILE)
+import excel2json
+EXCEL_FILE = '/Users/Username/Desktop/Book1.xlsx'
+excel2json.convert_from_file(EXCEL_FILE)
 
 
 # Method 2
