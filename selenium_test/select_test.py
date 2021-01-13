@@ -1,12 +1,19 @@
-# % xattr -r -d com.apple.quarantine geckodriver to bypass the security warning in MacOS
-# https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html
+# Download drivers. For MacOS move them to /usr/local/bin
+# If you are getting error of untrusted driver binary then run following command in terminal
+
+# For Firefox
+# sudo xattr -d com.apple.quarantine $(which geckodriver)
+
+
+# For Chrome
+# sudo xattr -d com.apple.quarantine $(which chromedriver)
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
-browser = webdriver.Chrome()
+browser = webdriver.Firefox()
 browser.get('http://python.org')
 
 search = browser.find_element_by_name('q')
