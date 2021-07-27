@@ -45,3 +45,10 @@ finally:
     print("Program Execution Completed")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
+
+try:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("notepad.exe {}".format(dstFilePath) if os.name == 'nt' else "open -e {}".format(dstFilePath))
+
+except:
+    print("Unexpected error {} occurred.".format(sys.exc_info()))
