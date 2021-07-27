@@ -6,7 +6,8 @@ root = tk.Tk()
 root .withdraw()
 
 srcFilePath = filedialog.askopenfilename()
-dstFilePath = filedialog.askopenfilename()
+dstFileDir = filedialog.askdirectory()
+dstFilePath = "".join((dstFileDir,"/processedFile.txt"))
 
 try:
     List = open(srcFilePath).readlines()
