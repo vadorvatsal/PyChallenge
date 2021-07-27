@@ -4,6 +4,7 @@ try:
     if sys.version_info[0]<3:
         raise Exception
 except:
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Warning you are not using python version 3")
     time.sleep(2)
 root = tk.Tk()
@@ -33,6 +34,10 @@ try:
             print("Successfully Processed at : {}".format(dstFilePath))
             time.sleep(2)
         os.system("notepad.exe {}".format(dstFilePath) if os.name == 'nt' else "open -e {}".format(dstFilePath))
+
+    else:
+        print("\nSorry please select accepted file format.")
+        time.sleep(3)
 except:
     print("Unexpected error {} occurred.".format(sys.exc_info()))
     time.sleep(3)
